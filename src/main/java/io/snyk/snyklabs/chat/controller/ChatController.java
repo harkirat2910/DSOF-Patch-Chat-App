@@ -28,6 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static java.lang.String.format;
+import escape from 'lodash.escape';
 
 @Controller
 public class ChatController {
@@ -100,7 +101,8 @@ public class ChatController {
     @GetMapping("/hello")
     public void hello(@RequestParam String user, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        response.getWriter().write("<h1>Hello: " + user + "</h1>");
+        const escapedText = escape(response.getWriter());
+        escapedText.write("<h1>Hello: " + user + "</h1>");
         response.getWriter().flush();
     }
 
