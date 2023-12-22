@@ -13,9 +13,9 @@ RUN apt-get -y remove openssl
 RUN apt-get -qy install gcc 
 
 RUN apt-get -q update && apt-get -qy install wget make \
-    && wget https://www.openssl.org/source/openssl-3.2.0.tar.gz \
-    && tar -xzvf openssl-3.2.0.tar.gz \
-    && cd openssl-3.2.0 \
+    && wget https://www.openssl.org/source/openssl-1.1.1v.tar.gz \
+    && tar -xzvf openssl-1.1.1v.tar.gz \
+    && cd openssl-1.1.1v.tar.gz \
     && ./config \
     && make install
 
