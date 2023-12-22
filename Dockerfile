@@ -1,4 +1,4 @@
-FROM openjdk:23-ea-1
+FROM openjdk:23-ea-2-jdk-oracle
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
